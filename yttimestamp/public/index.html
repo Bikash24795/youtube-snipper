@@ -401,7 +401,7 @@
             showStatus('🔄 Contacting backend server to get video information...', 'info');
             
             try {
-                const response = await fetch(`${API_BASE}/video-info`, {
+                const response = await fetch(`${API_BASE}/api/video-info`, {
                     method: 'POST',
                     headers: { 
                         'Content-Type': 'application/json' 
@@ -468,7 +468,7 @@
             let progressInterval = null;
             
             try {
-                const response = await fetch(`${API_BASE}/download`, {
+                const response = await fetch(`${API_BASE}/api/download`, {
                     method: 'POST',
                     headers: { 
                         'Content-Type': 'application/json' 
@@ -492,7 +492,7 @@
                         if (!downloadId) return;
                         
                         try {
-                            const progressResponse = await fetch(`${API_BASE}/progress/${downloadId}`);
+                            const progressResponse = await fetch(`${API_BASE}/api/progress/${downloadId}`);
                             const progressData = await progressResponse.json();
                             
                             updateProgress(progressData.percent, progressData.message);
