@@ -227,7 +227,9 @@ function downloadWithQuality(url, format, quality, outputPath, downloadId) {
 
         args.push('--no-overwrites', url);
 
-        console.log('🔧 yt-dlp command:', ytDlpPath, args.join(' '));
+        console.log('🔧 yt-dlp command:', ytDlpCommand
+
+, args.join(' '));
 
         const process = spawn('yt-dlp', args);
         
