@@ -428,7 +428,7 @@
                     showStatus('❌ Error: ' + (data.error || 'Failed to get video info'), 'error');
                 }
             } catch (error) {
-                showStatus('❌ Backend connection failed. Make sure server is running on port 3000.', 'error');
+                showStatus('❌ Backend connection failed. Make sure server is running.', 'error');
             } finally {
                 btn.disabled = false;
                 btn.textContent = '🔍 Get Video Information';
