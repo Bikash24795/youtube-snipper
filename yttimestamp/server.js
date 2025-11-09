@@ -17,7 +17,13 @@ if (!fs.existsSync('downloads')) fs.mkdirSync('downloads');
 
 // EXACT FFMPEG PATH - Update this if needed
 const ffmpegPath = path.join(__dirname, 'ffmpeg-8.0-essentials_build', 'bin', 'ffmpeg.exe');
-
+const ytDlpPath = path.join(__dirname, 'yt-dlp.exe');
+try {
+    fs.chmodSync(ytDlpPath, 0o755); // Give read/execute permissions
+    console.log('✅ Set execute permissions for yt-dlp');
+} catch (error) {
+    console.log('⚠️ Could not set yt-dlp permissions:', error.message);
+}
 console.log('🔍 Checking FFmpeg at:', ffmpegPath);
 console.log('✅ FFmpeg exists:', fs.existsSync(ffmpegPath));
 
