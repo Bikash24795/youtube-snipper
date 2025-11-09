@@ -184,7 +184,7 @@ app.post('/api/download', async (req, res) => {
 // Enhanced download function with progress tracking
 function downloadWithQuality(url, format, quality, outputPath, downloadId) {
     return new Promise((resolve, reject) => {
-        const ytDlpPath = path.join(__dirname, 'yt-dlp.exe');
+        const ytDlpCommand = 'yt-dlp';
         
         // Set initial "Downloading" message immediately
         activeDownloads.set(downloadId, {
