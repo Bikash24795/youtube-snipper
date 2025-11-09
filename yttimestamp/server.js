@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3000;
 if (!fs.existsSync('downloads')) fs.mkdirSync('downloads');
 
 // EXACT FFMPEG PATH - Update this if needed
-const ffmpegPath = 'ffmpeg';
+const ffmpegPath = './ffmpeg';
 const ytDlpCommand = 'yt-dlp';
 console.log('🔍 Checking FFmpeg at:', ffmpegPath);
 console.log('✅ FFmpeg exists:', fs.existsSync(ffmpegPath));
