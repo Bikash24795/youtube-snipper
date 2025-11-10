@@ -224,12 +224,7 @@ function downloadWithQuality(url, format, quality, outputPath, downloadId) {
             args.push('-f', qualityFilter);
         }
 
-        args.push(
-    '--no-overwrites',
-    '--user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-    '--extractor-args', 'youtube:skip=webpage',
-    '--throttled-rate', '500K',
-    url
+        args.push('--no-overwrites', url);
 );
 
         console.log('🔧 yt-dlp command:', ytDlpCommand
