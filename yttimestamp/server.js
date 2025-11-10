@@ -70,13 +70,11 @@ app.post('/api/download', async (req, res) => {
         }
 
         // Check FFmpeg for timestamps
-        if ((startTime || endTime) && !fs.existsSync(ffmpegPath)) {
-            return res.status(400).json({ 
-                error: 'FFmpeg not found for timestamps',
-                solution: 'FFmpeg should be at: ' + ffmpegPath
-            });
-        }
-
+       // Check FFmpeg for timestamps - ALLOW DOWNLOADS WITHOUT TIMESTAMPS
+if ((startTime || endTime) && !fs.existsSync(ffmpegPath)) {
+    console.log('⚠️ Timestamps requested but FFmpeg not available - downloading full video instead');
+    // Don't return error - just continue without timestamps
+}
         const videoId = Date.now();
         const useTimestamps = (startTime || endTime) && fs.existsSync(ffmpegPath);
         const filename = useTimestamps ? `clip_${videoId}.${format}` : `video_${videoId}.${format}`;
