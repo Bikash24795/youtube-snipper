@@ -197,30 +197,30 @@ function downloadWithQuality(url, format, quality, outputPath, downloadId) {
             // Handle video quality
             let qualityFilter;
             switch(quality) {
-                case '360':
-                    qualityFilter = 'best[height<=360]';
-                    console.log('📹 Quality: 360p (Smallest file)');
-                    break;
-                case '480':
-                    qualityFilter = 'best[height<=480]';
-                    console.log('📹 Quality: 480p (Good balance)');
-                    break;
-                case '720':
-                    qualityFilter = 'best[height<=720]';
-                    console.log('📹 Quality: 720p (HD)');
-                    break;
-                case '1080':
-                    qualityFilter = 'best[height<=1080]';
-                    console.log('📹 Quality: 1080p (Full HD)');
-                    break;
-                case 'best':
-                    qualityFilter = 'best';
-                    console.log('📹 Quality: Best Available (Largest file)');
-                    break;
-                default:
-                    qualityFilter = 'best[height<=720]';
-                    console.log('📹 Quality: Default 720p');
-            }
+    case '360':
+        qualityFilter = '18/134+140';
+        console.log('📹 Quality: 360p (Smallest file)');
+        break;
+    case '480':
+        qualityFilter = '135+140/18';
+        console.log('📹 Quality: 480p (Good balance)');
+        break;
+    case '720':
+        qualityFilter = '22/136+140';
+        console.log('📹 Quality: 720p (HD)');
+        break;
+    case '1080':
+        qualityFilter = '137+140';
+        console.log('📹 Quality: 1080p (Full HD)');
+        break;
+    case 'best':
+        qualityFilter = 'best';
+        console.log('📹 Quality: Best Available (Largest file)');
+        break;
+    default:
+        qualityFilter = '22/18';
+        console.log('📹 Quality: Default 720p');
+}
             args.push('-f', qualityFilter);
         }
 
