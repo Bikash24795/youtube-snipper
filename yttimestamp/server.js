@@ -224,13 +224,7 @@ function downloadWithQuality(url, format, quality, outputPath, downloadId) {
             args.push('-f', qualityFilter);
         }
 
-        args.push(
-    '--no-overwrites',
-    '--extractor-args', 'youtube:player_client=web,android',
-    '--throttled-rate', '100K',
-    '--socket-timeout', '30',
-    url
-);
+        args.push('--no-overwrites', url);
 
         console.log('🔧 yt-dlp command:', ytDlpCommand
 
