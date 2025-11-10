@@ -225,7 +225,6 @@ function downloadWithQuality(url, format, quality, outputPath, downloadId) {
         }
 
         args.push('--no-overwrites', url);
-);
 
         console.log('🔧 yt-dlp command:', ytDlpCommand
 
